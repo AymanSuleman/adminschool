@@ -112,13 +112,13 @@ class HomeScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  'Pending Class',
+                  'Other Classes',
                   style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                 ),
-                Text(
-                  'Completed Class',
-                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-                ),
+                // Text(
+                //   'Completed Class',
+                //   style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                // ),
               ],
             ),
           ),
