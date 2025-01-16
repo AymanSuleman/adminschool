@@ -110,10 +110,10 @@ class HomeScreen extends StatelessWidget {
             padding:
                 const EdgeInsets.symmetric(horizontal: 16.0, vertical: 16.0),
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 Text(
-                  'Other Classes',
+                  'Pending Class',
                   style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                 ),
                 // Text(
