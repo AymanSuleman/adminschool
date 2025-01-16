@@ -1,0 +1,69 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        
+        {
+            "name": "$RC5NQT1",
+            "cwd": "$Recycle.Bin\\S-1-5-21-2171654446-1391765782-1611085534-1001\\$RC5NQT1",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "$RC5NQT1 (profile mode)",
+            "cwd": "$Recycle.Bin\\S-1-5-21-2171654446-1391765782-1611085534-1001\\$RC5NQT1",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "$RC5NQT1 (release mode)",
+            "cwd": "$Recycle.Bin\\S-1-5-21-2171654446-1391765782-1611085534-1001\\$RC5NQT1",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "$RZSIN1Q",
+            "cwd": "$Recycle.Bin\\S-1-5-21-2171654446-1391765782-1611085534-1001\\$RZSIN1Q",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "$RZSIN1Q (profile mode)",
+            "cwd": "$Recycle.Bin\\S-1-5-21-2171654446-1391765782-1611085534-1001\\$RZSIN1Q",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "$RZSIN1Q (release mode)",
+            "cwd": "$Recycle.Bin\\S-1-5-21-2171654446-1391765782-1611085534-1001\\$RZSIN1Q",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "first_project",
+            "cwd": "Users\\ZEBA CHAROLIYA\\AndroidStudioProjects\\first_project",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "first_project (profile mode)",
+            "cwd": "Users\\ZEBA CHAROLIYA\\AndroidStudioProjects\\first_project",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "first_project (release mode)",
+            "cwd": "Users\\ZEBA CHAROLIYA\\AndroidStudioProjects\\first_project",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        }
+    ]
+}

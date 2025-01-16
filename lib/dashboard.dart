@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 void main() {
@@ -22,7 +21,7 @@ class HomeScreen extends StatelessWidget {
     {'title': 'Class 7 A', 'color': Colors.green},
     {'title': 'Class 8 B', 'color': Colors.purple},
     {'title': 'Class 9 A', 'color': Colors.pink},
-    {'title': 'Class 10 A', 'color': Colors.orange},
+    {'title': 'Class 10 A', 'color': Colors.purple},
   ];
 
   @override
@@ -66,7 +65,8 @@ class HomeScreen extends StatelessWidget {
           ),
           // Class Teacher Section
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+            padding:
+                const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
             child: Text(
               'Class Teacher',
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
@@ -107,7 +107,8 @@ class HomeScreen extends StatelessWidget {
           ),
           // Pending Class Section
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 16.0),
+            padding:
+                const EdgeInsets.symmetric(horizontal: 16.0, vertical: 16.0),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
