@@ -1,3 +1,5 @@
+import 'package:adminschool/attendance.dart';
+import 'package:adminschool/menu.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -30,10 +32,10 @@ class HomeScreen extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 0,
-        leading: IconButton(
-          icon: Icon(Icons.menu, color: Colors.black),
-          onPressed: () {},
-        ),
+        // leading: IconButton(
+        //   icon: Icon(Icons.menu, color: Colors.black),
+        //   onPressed: () {},
+        // ),
         title: Text(
           'Hello, Nikita!',
           style: TextStyle(
@@ -79,6 +81,13 @@ class HomeScreen extends StatelessWidget {
               color: Colors.teal.withOpacity(0.2),
               borderRadius: BorderRadius.circular(10),
             ),
+            child: GestureDetector(
+              onTap: () {
+                // Navigator.push(
+                //   context,
+                //   MaterialPageRoute(builder: (context) => Menu()),
+                // );
+              },
             child: Row(
               children: [
                 CircleAvatar(
@@ -103,6 +112,7 @@ class HomeScreen extends StatelessWidget {
                   ],
                 ),
               ],
+            ),
             ),
           ),
           // Pending Class Section
@@ -146,17 +156,17 @@ class HomeScreen extends StatelessWidget {
           ),
         ],
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: 0,
-        items: [
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: ''),
-          BottomNavigationBarItem(icon: Icon(Icons.calendar_today), label: ''),
-          BottomNavigationBarItem(icon: Icon(Icons.notifications), label: ''),
-          BottomNavigationBarItem(icon: Icon(Icons.person), label: ''),
-        ],
-        selectedItemColor: Colors.teal,
-        unselectedItemColor: Colors.grey,
-      ),
+      // bottomNavigationBar: BottomNavigationBar(
+      //   currentIndex: 0,
+      //   items: [
+      //     BottomNavigationBarItem(icon: Icon(Icons.home), label: ''),
+      //     BottomNavigationBarItem(icon: Icon(Icons.calendar_today), label: ''),
+      //     BottomNavigationBarItem(icon: Icon(Icons.notifications), label: ''),
+      //     BottomNavigationBarItem(icon: Icon(Icons.person), label: ''),
+      //   ],
+      //   selectedItemColor: Colors.teal,
+      //   unselectedItemColor: Colors.grey,
+      // ),
     );
   }
 }

@@ -43,7 +43,7 @@ class _AttendanceScreenState extends State<AttendanceScreen> {
             // Static Class Heading
             Center(
               child: Text(
-                'Attendance for 10 Class-A',
+                'Attendance  10-A',
                 style: TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
