@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart'; // Required for formatting the date
 
 void main() {
   runApp(MaterialApp(
@@ -23,6 +24,9 @@ class _AddStudentFormState extends State<AddStudentForm> {
   final TextEditingController _emailController = TextEditingController();
 
   bool _isSubmitted = false; // To control animation
+
+  // DateTime variable to store the birthdate
+  DateTime? _selectedBirthDate;
 
   // Method to handle form submission
   void _submitForm() {
@@ -51,11 +55,41 @@ class _AddStudentFormState extends State<AddStudentForm> {
     }
   }
 
+  // Function to pick birthdate using DatePicker
+  Future<void> _pickBirthDate() async {
+    DateTime? pickedDate = await showDatePicker(
+      context: context,
+      initialDate: DateTime.now(),
+      firstDate: DateTime(1900),
+      lastDate: DateTime.now(),
+    );
+
+    if (pickedDate != null) {
+      setState(() {
+        _selectedBirthDate = pickedDate;
+      });
+      // Optionally, update the age field based on the selected birthdate
+      final age = DateTime.now().year - pickedDate.year;
+      _ageController.text = age.toString();
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Add Student'),
+        leading: IconButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          icon: Icon(
+            Icons.arrow_back,
+            color: Colors.white,
+          ),
+        ),
+        title: Text('Add Student',style: TextStyle(color: Colors.white),),
+        backgroundColor: Colors.deepPurple,
+
       ),
       body: AnimatedContainer(
         duration: Duration(milliseconds: 500),
@@ -95,24 +129,30 @@ class _AddStudentFormState extends State<AddStudentForm> {
                 ),
                 SizedBox(height: 16),
 
-                // Age field
-                TextFormField(
-                  controller: _ageController,
-                  decoration: InputDecoration(
-                    labelText: 'Age',
-                    border: OutlineInputBorder(),
+                // BirthDate field with Date Picker
+                GestureDetector(
+                  onTap: _pickBirthDate,
+                  child: AbsorbPointer(
+                    child: TextFormField(
+                      controller: TextEditingController(
+                          text: _selectedBirthDate == null
+                              ? 'Select Birthdate'
+                              : DateFormat('dd-MM-yyyy')
+                                  .format(_selectedBirthDate!)),
+                      decoration: InputDecoration(
+                        labelText: 'BirthDate',
+                        border: OutlineInputBorder(),
+                      ),
+                      validator: (value) {
+                        if (value == null ||
+                            value.isEmpty ||
+                            _selectedBirthDate == null) {
+                          return 'Please select a valid birthdate';
+                        }
+                        return null;
+                      },
+                    ),
                   ),
-                  keyboardType: TextInputType.number,
-                  validator: (value) {
-                    if (value == null || value.isEmpty) {
-                      return 'Please enter the student\'s age';
-                    }
-                    final age = int.tryParse(value);
-                    if (age == null || age <= 0) {
-                      return 'Please enter a valid age';
-                    }
-                    return null;
-                  },
                 ),
                 SizedBox(height: 16),
 

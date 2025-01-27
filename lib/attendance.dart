@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 void main() => runApp(AttendanceApp());
@@ -19,6 +18,8 @@ class AttendanceScreen extends StatefulWidget {
 }
 
 class _AttendanceScreenState extends State<AttendanceScreen> {
+  String selectedClass = '10-A'; // Default selected class
+
   final List<Map<String, dynamic>> students = List.generate(
     10,
     (index) => {
@@ -32,24 +33,74 @@ class _AttendanceScreenState extends State<AttendanceScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Attendance'),
+        leading: IconButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          icon: Icon(
+            Icons.arrow_back,
+            color: Colors.white,
+          ),
+        ),
+        title: Text('Attendance', style: TextStyle(color: Colors.white)),
         backgroundColor: Colors.deepPurple,
+        actions: [
+          // Class Dropdown in AppBar
+          Padding(
+            padding: EdgeInsets.only(right: 16.0),
+            child: DropdownButton<String>(
+              value: selectedClass,
+              onChanged: (String? newValue) {
+                setState(() {
+                  selectedClass = newValue!;
+                });
+              },
+              underline: Container(),
+              icon: Icon(Icons.arrow_drop_down, color: Colors.white),
+              items: <String>[
+                '1-A',
+                '1-B',
+                '2-A',
+                '2-B',
+                '3-A',
+                '3-B',
+                '4-A',
+                '4-B',
+                '5-A',
+                '5-B',
+                '6-A',
+                '6-B',
+                '7-A',
+                '7-B',
+                '8-A',
+                '8-B',
+                '9-A',
+                '9-B',
+                '10-A',
+                '10-B',
+                '11',
+                '12',
+              ].map<DropdownMenuItem<String>>((String value) {
+                return DropdownMenuItem<String>(
+                  value: value,
+                  child: Text(
+                    value,
+                    style: TextStyle(
+                        color: selectedClass == value
+                            ? Colors.white
+                            : Colors.deepPurple),
+                  ),
+                );
+              }).toList(),
+            ),
+          ),
+        ],
       ),
       body: Padding(
         padding: EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Static Class Heading
-            Center(
-              child: Text(
-                'Attendance  10-A',
-                style: TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-            ),
             SizedBox(height: 16),
 
             // Attendance Headers
@@ -166,8 +217,8 @@ class _AttendanceScreenState extends State<AttendanceScreen> {
                         ),
                       );
                     },
-                    style:
-                        ElevatedButton.styleFrom(backgroundColor: Colors.deepPurple),
+                    style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.deepPurple),
                     child: Text(
                       'View Monthly Attendance',
                       style: TextStyle(color: Colors.white),
@@ -267,16 +318,6 @@ class _MonthlyAttendanceScreenState extends State<MonthlyAttendanceScreen> {
             ),
             SizedBox(height: 16),
 
-            // Monthly Totals
-            // Text(
-            //   'Total Present: $totalPresent\nTotal Absent: $totalAbsent',
-            //   style: TextStyle(
-            //     fontWeight: FontWeight.bold,
-            //     fontSize: 16,
-            //   ),
-            // ),
-            SizedBox(height: 16),
-
             // Monthly Attendance Data
             Expanded(
               child: ListView(
@@ -299,7 +340,6 @@ class _MonthlyAttendanceScreenState extends State<MonthlyAttendanceScreen> {
                       ),
                     ),
                   );
-                  
                 }).toList(),
               ),
             ),

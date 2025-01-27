@@ -1,3 +1,4 @@
+import 'package:adminschool/addHomework.dart';
 import 'package:adminschool/addstudent.dart';
 import 'package:adminschool/attendance.dart';
 import 'package:adminschool/dashboard.dart';
@@ -36,7 +37,7 @@ class MyApp extends StatelessWidget {
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           useMaterial3: true,
         ),
-        home: AddStudentForm());
+        home: Menu());
   }
 }
 

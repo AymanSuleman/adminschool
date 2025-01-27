@@ -1,4 +1,5 @@
 import 'package:adminschool/addHomework.dart';
+import 'package:adminschool/addstudent.dart';
 import 'package:adminschool/attendance.dart';
 import 'package:flutter/material.dart';
 // import 'package:school/attendance.dart';
@@ -28,7 +29,11 @@ class Menu extends StatelessWidget {
     {'icon': Icons.assignment_sharp, 'label': 'Exammination', 'page': ()},
     {'icon': Icons.description, 'label': 'Report Card', 'page': ()},
     {'icon': Icons.line_weight_outlined, 'label': 'Notice Board', 'page': ()},
-    {'icon': Icons.person_add, 'label': 'Add Student', 'page': ()},
+    {
+      'icon': Icons.person_add,
+      'label': 'Add Student',
+      'page': AddStudentForm()
+    },
   ];
 
   Menu({super.key});
@@ -44,50 +49,8 @@ class Menu extends StatelessWidget {
           style: TextStyle(color: Colors.white),
         ),
         centerTitle: true,
-        // leading: IconButton(
-        //     onPressed: () {
-        //       Navigator.pop(context);
-        //     },
-        //     icon:  Icon(
-        //       Icons.arrow_back,
-        //       color: Colors.white,
-        //     )),
-        actions: [
-          Row(
-            children: [
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.end,
-                mainAxisAlignment:
-                    MainAxisAlignment.center, // Align to the right
-                children: [
-                  Text(
-                    "UserName",
-                    style: TextStyle(fontSize: 14, color: Colors.white),
-                  ),
-                  Text(
-                    "Class",
-                    style: TextStyle(fontSize: 12, color: Colors.white),
-                  ),
-                ],
-              ),
-              SizedBox(width: 8),
-              // GestureDetector(
-              //   onTap: () {
-              //     Navigator.push(
-              //         context,
-              //         MaterialPageRoute(
-              //           builder: (context) =>  (),
-              //         ));
-              //   },
-              //   child:  CircleAvatar(
-              //     backgroundImage: AssetImage("assets/images/profilepic.jpg"),
-              //   ),
-              // ),
-
-              SizedBox(width: 8), // Optional spacing for better layout
-            ],
-          ),
-        ],
+        
+        
       ),
       body: Padding(
         padding: EdgeInsets.only(top: 50, right: 20, left: 20),
